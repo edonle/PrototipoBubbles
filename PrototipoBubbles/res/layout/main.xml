@@ -2,14 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="horizontal" >
+    android:orientation="vertical" >
 
     <Button
-        android:id="@+id/button_send"
-        android:layout_width="0dip"
-        android:layout_height="fill_parent"
+        android:id="@+id/main_button"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
         android:layout_weight="1"
-        android:onClick="sendMessage"
-        android:text="@string/button_send" />
+        android:textSize="30sp"
+        android:text="@string/main_button" />
+
+    <TextView
+        android:id="@+id/offers"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="@string/offers" />
+
+    <TextView
+        android:id="@+id/stimulus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:text="@string/stimulus" />
 
 </LinearLayout>

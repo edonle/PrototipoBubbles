@@ -10,17 +10,23 @@ public class DisplayListBubblesActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		setContentView(R.layout.listabubbles);
 
-		// Get the message from the intent
+		// Obtendo o objeto intent do Bubbles Activity
 		Intent intent = getIntent();
 		String message = intent.getStringExtra(PrototipoBubblesActivity.EXTRA_MESSAGE);
-
+		String localizacao = intent.getStringExtra(PrototipoBubblesActivity.CURRENT_LOCATION);
+				
+		TextView textView = (TextView) findViewById(R.id.my_bubbles);
+		TextView textViewLocalizacao = (TextView) findViewById(R.id.my_location);
+		
 		// Create the text view
-		TextView textView = new TextView(this);
 		textView.setTextSize(30);
 		textView.setText(message);
-
-		setContentView(textView);
+		
+		textViewLocalizacao.setTextSize(15);
+		textViewLocalizacao.setText(String.valueOf(localizacao));
 	}
 
 }
