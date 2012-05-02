@@ -11,7 +11,7 @@ public class DisplayListBubblesActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.listabubbles);
+		setContentView(R.layout.bubbleslist);
 
 		// Obtendo o objeto intent do Bubbles Activity
 		Intent intent = getIntent();
@@ -21,7 +21,6 @@ public class DisplayListBubblesActivity extends Activity {
 		TextView textView = (TextView) findViewById(R.id.my_bubbles);
 		TextView textViewLocalizacao = (TextView) findViewById(R.id.my_location);
 		
-		// Create the text view
 		textView.setTextSize(30);
 		textView.setText(message);
 		

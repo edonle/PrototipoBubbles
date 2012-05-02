@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bubbles</string>    
+    <string name="layout_name">Lista de Bubbles</string>
+    <string name="main_button">Bubbles!!!</string>
+    <string name="offers">Ofertas exclusivas!!!</string>
+    <string name="stimulus">Use o Bubbles em qualquer lugar. Sem Limites.</string>
+</resources>
