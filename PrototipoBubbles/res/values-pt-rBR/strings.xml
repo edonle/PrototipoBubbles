@@ -5,4 +5,5 @@
     <string name="main_button">Bubbles!!!</string>
     <string name="offers">Ofertas exclusivas!!!</string>
     <string name="stimulus">Use o Bubbles em qualquer lugar. Sem Limites.</string>
+    <string name="progressBarDescription">Localizando Bubbles</string>
 </resources>

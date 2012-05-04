@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="br.com.zeuus.prototipo.bubbles.DisplaySearchBubblesActivity" />
+        <activity
             android:name="br.com.zeuus.prototipo.bubbles.DisplayListBubblesActivity"
             android:label="@string/layout_name" />
     </application>

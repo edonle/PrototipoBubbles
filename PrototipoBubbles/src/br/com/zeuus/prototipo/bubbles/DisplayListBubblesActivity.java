@@ -15,8 +15,8 @@ public class DisplayListBubblesActivity extends Activity {
 
 		// Obtendo o objeto intent do Bubbles Activity
 		Intent intent = getIntent();
-		String message = intent.getStringExtra(PrototipoBubblesActivity.EXTRA_MESSAGE);
-		String localizacao = intent.getStringExtra(PrototipoBubblesActivity.CURRENT_LOCATION);
+		String message = intent.getStringExtra(DisplaySearchBubblesActivity.EXTRA_MESSAGE);
+		String localizacao = intent.getStringExtra(DisplaySearchBubblesActivity.CURRENT_LOCATION);
 				
 		TextView textView = (TextView) findViewById(R.id.my_bubbles);
 		TextView textViewLocalizacao = (TextView) findViewById(R.id.my_location);
