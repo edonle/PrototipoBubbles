@@ -1,5 +1,8 @@
 package br.com.zeuus.prototipo.bubbles;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -7,13 +10,14 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 
 public class DisplaySearchBubblesActivity extends Activity implements
 		LocationListener {
 
-	public final static String EXTRA_MESSAGE = "br.com.zeuus.prototipo.bubbles.MESSAGE";
 	public final static String CURRENT_LOCATION = "br.com.zeuus.prototipo.bubbles.CURRENT_LOCATION";
+	public final static String BUBBLES_FOUND = "br.com.zeuus.prototipo.bubbles.BUBBLES_FOUND";	
 
 	private LocationManager lm;
 
@@ -38,8 +42,9 @@ public class DisplaySearchBubblesActivity extends Activity implements
 					// Enquanto não identificou a latitude e a longitude
 					while (getLatitude() == null || getLongitude() == null) {
 						Log.e("GPS", "GPS location identifying");
+						
 						// Dorme 1 segundo
-						Thread.sleep(1000);
+						Thread.sleep(800);
 					}
 
 					// Aqui foi identificada a localização
@@ -58,11 +63,21 @@ public class DisplaySearchBubblesActivity extends Activity implements
 		Intent intent = new Intent(this, DisplayListBubblesActivity.class);
 		Bundle bundle = new Bundle();
 
-		String message = "Lojas Americanas\n450m\n\nMc Donalds\n510m\n\nDroga Raia\n1100m";
+		// Criação de bubbles para teste
+		Bubbles bubbles1 = new Bubbles("Lojas Americanas", 385);
+		Bubbles bubbles2 = new Bubbles("Carrefour", 776);
+		Bubbles bubbles3 = new Bubbles("Burger King", 985);
+		
+		// Joga os bubbles de teste num ArrayList
+		List<Bubbles> bubblesList = new ArrayList<Bubbles>();		
+		bubblesList.add(bubbles1);
+		bubblesList.add(bubbles2);
+		bubblesList.add(bubbles3);
 
-		bundle.putString(EXTRA_MESSAGE, message);
+		// Envia os bubbles e a localização para a próxima Activity
 		bundle.putString(CURRENT_LOCATION, getCurrentLocation());
-
+		bundle.putParcelableArrayList(BUBBLES_FOUND, (ArrayList<? extends Parcelable>) bubblesList);
+		
 		intent.putExtras(bundle);
 		startActivity(intent);
 	}
